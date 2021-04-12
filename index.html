@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Save test</title>
+</head>
+<body>
+
+    <div>
+        <form class="container" onsubmit="SignUp(event)">
+            <p>FORMULARIO</p>
+            <div class="form">
+                <input type="text" id="name" placeholder="Primeiro nome" required> 
+            </div>    
+            <div class="form">
+                <input type="text" id="sobrenome" placeholder="Sobrenome" required> 
+            </div >  
+            <div class="form">
+                <input type="email" id="email" placeholder="Seu melhor email" required> 
+            </div>
+            <div class="form">
+                <input type="password" id="password" placeholder="Sua melhor senha" required> 
+            </div>
+            <button type="submit" class="button">Save</button>  
+        </form>
+    </div>
+    <script>
+        function SignUp(e) {
+            let formData = {
+                name: document.getElementById("name").value,
+                sobrenome: document.getElementById("sobrenome").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value
+            }
+            localStorage.setItem('formData', JSON.stringify(formData));
+            e.preventDefault();
+        }
+        
+    </script>
+</body>
+</html>
